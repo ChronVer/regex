@@ -1,0 +1,51 @@
+{
+  "author": {
+    "email": "paul+code@webb.page",
+    "name": "netop://ウエハ",
+    "url": "https://webb.page"
+  },
+  "description": "Regular expression for matching chronver versions",
+  "devDependencies": {
+    "@inc/eslint-config": "^1.1.3",
+    "ava": "^2.1.0",
+    "eslint": "^5.16.0",
+    "husky": "^2.4.0",
+    "snazzy": "^8.0.0",
+    "standardx": "^3.0.1",
+    "updates": "^8.1.0"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "files": [
+    "index.js"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format && npm run test && git add -A :/"
+    }
+  },
+  "keywords": [
+    "chronologic",
+    "chronver",
+    "date",
+    "match",
+    "matching",
+    "regex",
+    "regexp",
+    "version",
+    "versions"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "chronver-regex",
+  "repository": {
+    "type": "git",
+    "url": "git+https://git.inc.sh/ChronVer/chronver-regex.git"
+  },
+  "scripts": {
+    "format": "eslint '**/*.js' --fix",
+    "test": "ava && updates --update ./"
+  },
+  "version": "2019.06.10"
+}

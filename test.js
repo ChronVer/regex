@@ -1,0 +1,62 @@
+"use strict";
+
+
+
+//  I M P O R T S
+
+import ava from "ava";
+import chronverRegex from ".";
+
+//  U T I L S
+
+const invalidStrings = [
+  "0000.0.00",
+  "0000.00.0",
+  "000.000.0",
+  "00.0000.0",
+  "0.0000.00",
+  "0.00.0000",
+  "0.000.000",
+  "0000.0.00",
+  "000.0.000",
+  "v0000.00.00"
+];
+
+const validStrings = [
+  "0000.00.00",
+  "0000.00.00-3",
+  "0000.00.00-foo",
+  "1970.01.01",
+  "1970.01.01.13",
+  "1970.01.01.13-break",
+  "1970.01.01.13-break.1",
+  "1970.01.01.14-super-ui-enhance",
+  "1970.01.01.14-super-ui-enhance.13",
+  "1970.01.01.14-super-ui-please-work",
+  "1970.01.01.14-super-ui-please-work.57",
+  "1970.01.01-a.b.c.10.d.5",
+  "1970.01.01-alpha.10.beta",
+  "1970.01.01-alpha.10.beta+build.unicorn.rainbow",
+  "1970.01.01-foo+bar",
+  "1970.01.01-super-ui-enhance",
+  "1970.01.01-super-ui-enhance.2",
+  "1970.01.01-super-ui-please-work",
+  "1970.01.01-super-ui-please-work.9",
+  "1970.01.01+asdf"
+];
+
+
+
+//  T E S T S
+
+ava("Matches valid chronver strings", test => {
+  validStrings.forEach(string => {
+    test.regex(string, chronverRegex());
+  });
+});
+
+ava("Does not match invalid chronver strings", test => {
+  invalidStrings.forEach(string => {
+    test.notRegex(string, chronverRegex());
+  });
+});
