@@ -6,13 +6,17 @@
   },
   "description": "Regular expression for matching chronver versions",
   "devDependencies": {
-    "@inc/eslint-config": "^2019.7.23",
-    "ava": "^2.2.0",
-    "eslint": "^6.1.0",
-    "husky": "^3.0.1",
+    "@babel/preset-flow": "^7.0.0",
+    "@inc/eslint-config": "^2019.10.22",
+    "ava": "^2.4.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.5.1",
+    "eslint-plugin-flowtype": "^4.3.0",
+    "flow-bin": "^0.110.1",
+    "husky": "^3.0.9",
     "snazzy": "^8.0.0",
-    "standardx": "^4.0.0",
-    "updates": "^8.5.1"
+    "standardx": "^5.0.0",
+    "updates": "^9.0.1"
   },
   "engines": {
     "node": ">=12"
@@ -41,8 +45,9 @@
   "name": "chronver-regex",
   "repository": "https://code.webb.page/ChronVer/chronver-regex",
   "scripts": {
-    "format": "eslint '**/*.js' --fix",
-    "test": "ava && updates --update ./"
+    "flow": "flow",
+    "format": "eslint . --fix",
+    "test": "ava && flow && updates --update ./"
   },
-  "version": "2019.07.24"
+  "version": "2019.10.23"
 }
