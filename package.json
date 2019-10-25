@@ -49,5 +49,5 @@
     "format": "eslint . --fix",
     "test": "ava && flow && updates --update ./"
   },
-  "version": "2019.10.23"
+  "version": "2019.10.25"
 }
