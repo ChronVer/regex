@@ -1,9 +1,0 @@
-{
-  "ignore": [
-  ],
-  "plugins": [
-  ],
-  "presets": [
-    "@babel/preset-flow"
-  ]
-}

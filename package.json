@@ -1,32 +1,27 @@
 {
   "author": {
-    "email": "paul+code@webb.page",
     "name": "netop://ウエハ",
     "url": "https://webb.page"
   },
   "description": "Regular expression for matching chronver versions",
   "devDependencies": {
-    "@babel/preset-flow": "^7.0.0",
-    "@inc/eslint-config": "^2019.10.22",
-    "ava": "^2.4.0",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.5.1",
-    "eslint-plugin-flowtype": "^4.3.0",
-    "flow-bin": "^0.110.1",
-    "husky": "^3.0.9",
-    "snazzy": "^8.0.0",
-    "standardx": "^5.0.0",
-    "updates": "^9.0.1"
+    "@types/rethinkdb": "^2.3.14",
+    "@webb/config-prettier": "^2020.2.1-0.3",
+    "@webb/test": "^2020.2.12",
+    "chronver": "^2019.10.2-7.1",
+    "del-cli": "^3.0.0",
+    "husky": "^4.2.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
+    "rethinkdb-ts": "^2.4.2",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5",
+    "updates": "^9.3.3"
   },
-  "engines": {
-    "node": ">=12"
-  },
-  "files": [
-    "index.js"
-  ],
+  "homepage": "https://code.webb.page/ChronVer/chronver-regex",
   "husky": {
     "hooks": {
-      "pre-commit": "npm run format && npm run test && git add -A :/"
+      "pre-commit": "npm run build && npm run test:assert && npm run pretty && npm run increment && git add -A :/"
     }
   },
   "keywords": [
@@ -41,13 +36,26 @@
     "versions"
   ],
   "license": "MIT",
-  "main": "index.js",
+  "main": "dist/index.js",
   "name": "chronver-regex",
-  "repository": "https://code.webb.page/ChronVer/chronver-regex",
-  "scripts": {
-    "flow": "flow",
-    "format": "eslint . --fix",
-    "test": "ava && flow && updates --update ./"
+  "prettier": "@webb/config-prettier",
+  "publishConfig": {
+    "registry": "https://npm.inc.sh"
   },
-  "version": "2019.10.25"
+  "repository": {
+    "type": "git",
+    "url": "https://code.webb.page/ChronVer/chronver-regex"
+  },
+  "scripts": {
+    "build": "npm run cleanup && tsc",
+    "cleanup": "del './dist'",
+    "increment": "chronver --increment package",
+    "pretty": "prettier --write 'dist/**/*.js' 'dist/**/*.ts'",
+    "test": "run-s test:*",
+    "test:dependencies": "updates --update ./",
+    "test:typescript": "tsc",
+    "test:assert": "ts-node test/index.ts"
+  },
+  "types": "dist/index.d.ts",
+  "version": "2020.02.13"
 }
