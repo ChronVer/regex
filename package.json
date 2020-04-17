@@ -6,19 +6,19 @@
   "description": "Regular expression for matching chronver versions",
   "devDependencies": {
     "@types/rethinkdb": "^2.3.14",
-    "@webb/config-prettier": "^2020.2.1-0.3",
-    "@webb/test": "^2020.2.12",
-    "chronver": "^2019.10.2-7.1",
+    "@webb/config-prettier": "^2020.4.16",
+    "@webb/test": "^2020.4.15",
+    "chronver": "^2020.4.16",
     "del-cli": "^3.0.0",
-    "husky": "^4.2.3",
+    "husky": "^4.2.5",
     "npm-run-all": "^4.1.5",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.4",
     "rethinkdb-ts": "^2.4.2",
-    "ts-node": "^8.6.2",
-    "typescript": "^3.7.5",
-    "updates": "^9.3.3"
+    "ts-node": "^8.8.2",
+    "typescript": "^3.8.3",
+    "updates": "^10.2.7"
   },
-  "homepage": "https://code.webb.page/ChronVer/chronver-regex",
+  "homepage": "https://github.com/ChronVer/regex",
   "husky": {
     "hooks": {
       "pre-commit": "npm run build && npm run test:assert && npm run pretty && npm run increment && git add -A :/"
@@ -37,14 +37,11 @@
   ],
   "license": "MIT",
   "main": "dist/index.js",
-  "name": "chronver-regex",
+  "name": "@chronver/regex",
   "prettier": "@webb/config-prettier",
-  "publishConfig": {
-    "registry": "https://npm.inc.sh"
-  },
   "repository": {
     "type": "git",
-    "url": "https://code.webb.page/ChronVer/chronver-regex"
+    "url": "https://github.com/ChronVer/regex"
   },
   "scripts": {
     "build": "npm run cleanup && tsc",
@@ -57,5 +54,5 @@
     "test:assert": "ts-node test/index.ts"
   },
   "types": "dist/index.d.ts",
-  "version": "2020.02.13"
+  "version": "2020.04.16"
 }

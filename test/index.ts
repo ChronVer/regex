@@ -54,7 +54,7 @@ const validStrings = [
 
 //  T E S T S
 
-const test = Test("chronver-regex");
+const test = Test("@chronver/regex");
 
 test("'chronverRegex' is indeed, a regex", () => {
   assert(chronverRegex instanceof RegExp);
@@ -62,7 +62,7 @@ test("'chronverRegex' is indeed, a regex", () => {
 
 test("Each valid version succeeds, using raw RegExp", () => {
   validStrings.forEach(version => {
-    assert.match(version, new RegExp(chronverRegex));
+    assert.strictEqual(chronverRegex.test(version), true);
   });
 });
 

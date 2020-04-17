@@ -1,4 +1,4 @@
-# chronver-regex
+# @chronver/regex
 
 > Regular expression for matching [chronver](https://chronver.org "Official ChronVer website") versions.
 
@@ -7,7 +7,7 @@
 ## Install
 
 ```sh
-$ npm i chronver-regex
+$ npm i @chronver/regex
 ```
 
 
@@ -16,7 +16,7 @@ $ npm i chronver-regex
 
 ```js
 // Import the default export for validation helper usage
-import validateChronver from "chronver-regex";
+import validateChronver from "@chronver/regex";
 
 validateChronver("1970.01.01");
 // => true
@@ -27,7 +27,7 @@ validateChronver("1970.01.01-alpha.10.beta+build.unicorn.rainbow");
 
 ```js
 // Or, export the regex to use directly
-import { chronverRegex } from "chronver-regex";
+import { chronverRegex } from "@chronver/regex";
 
 chronverRegex.test("1970.01.01");
 // => true
