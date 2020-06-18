@@ -5,18 +5,18 @@
   },
   "description": "Regular expression for matching chronver versions",
   "devDependencies": {
-    "@types/rethinkdb": "^2.3.14",
+    "@types/rethinkdb": "^2.3.15",
     "@webb/config-prettier": "^2020.4.16",
     "@webb/test": "^2020.4.15",
     "chronver": "^2020.4.16",
-    "del-cli": "^3.0.0",
+    "del-cli": "^3.0.1",
     "husky": "^4.2.5",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.0.4",
+    "prettier": "^2.0.5",
     "rethinkdb-ts": "^2.4.2",
-    "ts-node": "^8.8.2",
-    "typescript": "^3.8.3",
-    "updates": "^10.2.7"
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5",
+    "updates": "^10.2.13"
   },
   "homepage": "https://github.com/ChronVer/regex",
   "husky": {
@@ -54,5 +54,5 @@
     "test:assert": "ts-node test/index.ts"
   },
   "types": "dist/index.d.ts",
-  "version": "2020.04.16"
+  "version": "2020.06.18"
 }
